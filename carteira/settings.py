@@ -25,7 +25,7 @@ SECRET_KEY = '^z_-d(ox@d0)ixj8410$*o4#*50ogz2wsjt+fwry(#$*n&ph#l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['walletrp2.herokuapp.com']
 
 
 # Application definition
