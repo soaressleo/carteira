@@ -1,0 +1,1 @@
+web: gunicorn carteira.wsgi --log-file -
