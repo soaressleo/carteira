@@ -43,9 +43,11 @@ INSTALLED_APPS = [
 #    'django_mongoengine',
 #    'mongoengine',
     'rest_framework_mongoengine',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -147,4 +149,8 @@ mongoengine.connect(
     username='Leonardo_Santos',
     password='0HDF30mHqJ3',
     authentication_source='admin'
+)
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:4200',
 )
