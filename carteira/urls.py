@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
+from rest_framework_mongoengine import routers
 from api import views as myapp_views
 
 router = routers.DefaultRouter()

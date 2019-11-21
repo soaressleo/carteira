@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+import mongoengine
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'django_filters',
+#    'django_mongoengine',
+#    'mongoengine',
+    'rest_framework_mongoengine',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,22 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
+
+#MONGODB_DATABASES = {
+#    "default": {
+#        "name": "Carteira",
+#        "host": "mongodb+srv://rp2-ea5y0.mongodb.net",
+#        "password": "Leonardo_Santos",
+#        "username": "0HDF30mHqJ3",
+#        "tz_aware": True, # if you using timezones in django (USE_TZ = True),
+#        "authentication_source" : "admin",
+#    },
+#}
+
+mongoengine.connect(
+    db="Carteira",
+    host="mongodb+srv://rp2-ea5y0.mongodb.net",
+    username='Leonardo_Santos',
+    password='0HDF30mHqJ3',
+    authentication_source='admin'
+)

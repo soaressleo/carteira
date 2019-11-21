@@ -1,29 +1,29 @@
 from django.db import models
+from mongoengine import Document, EmbeddedDocument, fields
 
 
 # Create your models here.
 
-class Ativos(models.Model):
+class Ativos(Document):
+    Company = fields.StringField()
+    Stock = fields.StringField()
 
-    Company = models.CharField(max_length=250)
-    Stock = models.CharField(max_length=20)
+
+class Atual(Document):
+    stock = fields.StringField()
+    open = fields.DecimalField()
+    high = fields.DecimalField()
+    low = fields.DecimalField()
+    close = fields.DecimalField()
+    volume = fields.DecimalField()
+    date = fields.StringField()
 
 
-class Atual(models.Model):
-
-    stock = models.CharField(max_length=20)
-    open = models.DecimalField(max_digits=10, decimal_places=2)
-    high = models.DecimalField(max_digits=10, decimal_places=2)
-    low = models.DecimalField(max_digits=10, decimal_places=2)
-    close = models.DecimalField(max_digits=10, decimal_places=2)
-    volume = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.CharField(max_length=20)
-
-class Historico(models.Model):
-    stock = models.CharField(max_length=20)
-    open = models.DecimalField(max_digits=10, decimal_places=2)
-    high = models.DecimalField(max_digits=10, decimal_places=2)
-    low = models.DecimalField(max_digits=10, decimal_places=2)
-    close = models.DecimalField(max_digits=10, decimal_places=2)
-    volume = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.CharField(max_length=20)
+class Historico(Document):
+    stock = fields.StringField()
+    open = fields.DecimalField()
+    high = fields.DecimalField()
+    low = fields.DecimalField()
+    close = fields.DecimalField()
+    volume = fields.DecimalField()
+    date = fields.StringField()
