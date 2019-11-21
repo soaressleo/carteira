@@ -25,7 +25,7 @@ SECRET_KEY = '^z_-d(ox@d0)ixj8410$*o4#*50ogz2wsjt+fwry(#$*n&ph#l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['walletrp2.herokuapp.com']
+ALLOWED_HOSTS = ['walletrp2.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'api',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
